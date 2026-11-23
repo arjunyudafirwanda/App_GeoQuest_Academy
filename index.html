@@ -1,0 +1,458 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#101a35" />
+    <meta
+      name="description"
+      content="GeoQuest Academy — game edukasi geografi dan literasi spasial untuk remaja SMP. Jelajahi peta, wilayah, iklim, budaya, dan mitigasi bencana melalui 20 misi interaktif."
+    />
+    <meta name="author" content="Arjun Yuda Firwanda" />
+    <title>GeoQuest Academy | Explore the World</title>
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <header class="site-header" id="siteHeader">
+      <div class="header-inner">
+        <a class="brand" href="#home" aria-label="GeoQuest Academy beranda">
+          <span class="brand-mark"><i class="fa-solid fa-earth-asia"></i></span>
+          <span class="brand-copy"
+            ><strong>GEOQUEST</strong><small>ACADEMY</small></span
+          >
+        </a>
+        <div class="header-right" id="headerRight" hidden>
+          <div class="player-chip">
+            <span class="player-avatar"
+              ><i class="fa-solid fa-compass"></i
+            ></span>
+            <span class="player-copy"
+              ><small>EXPLORER</small
+              ><strong id="headerPlayer">Explorer</strong></span
+            >
+          </div>
+          <div class="header-stat">
+            <i class="fa-solid fa-graduation-cap"></i
+            ><span
+              ><small>GRADE</small><strong id="headerGrade">VII</strong></span
+            >
+          </div>
+          <div class="header-stat">
+            <i class="fa-solid fa-star"></i
+            ><span
+              ><small>POINTS</small><strong id="headerScore">0</strong></span
+            >
+          </div>
+          <button
+            class="icon-button theme-toggle"
+            id="themeToggle"
+            type="button"
+            aria-label="Ganti tema"
+          >
+            <i class="fa-solid fa-moon"></i>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main id="home">
+      <section class="welcome-screen" id="welcomeScreen">
+        <div class="welcome-orb orb-a"></div>
+        <div class="welcome-orb orb-b"></div>
+        <div class="welcome-layout page-shell">
+          <div class="welcome-copy">
+            <span class="eyebrow"
+              ><i class="fa-solid fa-location-dot"></i> A GEOGRAPHY ADVENTURE
+              FOR TEENS</span
+            >
+            <h1>Explore the world.<br /><span>Decode the planet.</span></h1>
+            <p class="welcome-lead">
+              Jadilah penjelajah muda! Pecahkan misteri peta, kenali keunikan
+              Indonesia, pahami lingkungan, dan temukan cara menghadapi bencana
+              melalui 20 misi geografi interaktif.
+            </p>
+            <div class="welcome-highlights">
+              <div>
+                <span class="highlight-icon mint"
+                  ><i class="fa-solid fa-map"></i></span
+                ><span
+                  ><strong>20 Misi</strong
+                  ><small>Tantangan eksplorasi</small></span
+                >
+              </div>
+              <div>
+                <span class="highlight-icon gold"
+                  ><i class="fa-solid fa-earth-asia"></i></span
+                ><span
+                  ><strong>5 Zona</strong><small>Jelajahi bumi</small></span
+                >
+              </div>
+              <div>
+                <span class="highlight-icon violet"
+                  ><i class="fa-solid fa-compass"></i></span
+                ><span
+                  ><strong>Think Spatially</strong
+                  ><small>Belajar membaca ruang</small></span
+                >
+              </div>
+            </div>
+          </div>
+          <div class="welcome-card">
+            <div class="card-topline">
+              <span class="mini-logo"
+                ><i class="fa-solid fa-earth-asia"></i></span
+              ><span>YOUR EXPLORATION STARTS HERE</span>
+            </div>
+            <div class="globe-scene" aria-hidden="true">
+              <div class="orbit orbit-one"></div>
+              <div class="orbit orbit-two"></div>
+              <div class="globe">
+                <span class="continent continent-one"></span
+                ><span class="continent continent-two"></span
+                ><span class="continent continent-three"></span
+                ><span class="globe-shine"></span>
+              </div>
+              <span class="scene-pin pin-one"
+                ><i class="fa-solid fa-location-dot"></i></span
+              ><span class="scene-pin pin-two"
+                ><i class="fa-solid fa-location-dot"></i
+              ></span>
+              <span class="scene-star star-one">✦</span
+              ><span class="scene-star star-two">✧</span>
+            </div>
+            <form id="startForm" class="start-form" novalidate>
+              <label for="playerName">Nama penjelajah</label>
+              <div class="input-wrap">
+                <i class="fa-regular fa-user"></i
+                ><input
+                  id="playerName"
+                  name="playerName"
+                  type="text"
+                  maxlength="24"
+                  autocomplete="name"
+                  placeholder="Masukkan nama kamu"
+                  required
+                />
+              </div>
+              <label for="playerAge">Usia</label>
+              <div class="input-wrap">
+                <i class="fa-solid fa-cake-candles"></i
+                ><input
+                  id="playerAge"
+                  name="playerAge"
+                  type="number"
+                  min="13"
+                  max="16"
+                  inputmode="numeric"
+                  placeholder="13–16 tahun"
+                  required
+                />
+              </div>
+              <p class="form-hint">
+                Untuk peserta didik SMP usia 13–16 tahun. Progres tersimpan di
+                browser ini.
+              </p>
+              <button class="btn btn-primary btn-start" type="submit">
+                Mulai Eksplorasi <i class="fa-solid fa-arrow-right"></i>
+              </button>
+              <p class="form-error" id="formError" role="alert" hidden></p>
+              <p class="privacy-note">
+                <i class="fa-solid fa-shield-heart"></i> Tidak perlu akun,
+                email, atau kata sandi.
+              </p>
+            </form>
+          </div>
+        </div>
+        <div class="welcome-footer page-shell">
+          <span
+            ><i class="fa-solid fa-graduation-cap"></i> LEARN THROUGH
+            EXPLORATION</span
+          ><span>MAPS <b>·</b> PLACES <b>·</b> PEOPLE <b>·</b> PLANET</span>
+        </div>
+      </section>
+
+      <section class="app-shell page-shell" id="appShell" hidden>
+        <div class="app-heading">
+          <div>
+            <span class="section-kicker">EXPLORER HEADQUARTERS</span>
+            <h2>Selamat datang, <span id="welcomePlayer">Explorer</span>!</h2>
+            <p>
+              Pilih zona dan misi yang ingin kamu jelajahi. Progres setiap misi
+              akan tersimpan.
+            </p>
+          </div>
+          <div class="heading-actions">
+            <button
+              class="btn btn-soft btn-small"
+              id="changePlayer"
+              type="button"
+            >
+              <i class="fa-solid fa-users"></i> Ganti Pemain
+            </button>
+          </div>
+        </div>
+
+        <section class="overview-grid" aria-label="Ringkasan progres">
+          <article class="overview-card overview-main">
+            <span class="overview-icon"
+              ><i class="fa-solid fa-map-location-dot"></i
+            ></span>
+            <div>
+              <small>EXPLORATION PROGRESS</small
+              ><strong id="overallProgress">0%</strong>
+              <div class="mini-progress"><span id="overallBar"></span></div>
+            </div>
+            <span class="overview-note" id="completedLabel">0 / 20 misi</span>
+          </article>
+          <article class="overview-card">
+            <span class="overview-icon score"
+              ><i class="fa-solid fa-star"></i
+            ></span>
+            <div>
+              <small>TOTAL POINTS</small><strong id="dashboardScore">0</strong
+              ><span class="overview-note">Poin terkumpul</span>
+            </div>
+          </article>
+          <article class="overview-card">
+            <span class="overview-icon badge-icon"
+              ><i class="fa-solid fa-medal"></i
+            ></span>
+            <div>
+              <small>BADGES EARNED</small><strong id="badgeCount">0</strong
+              ><span class="overview-note">Lencana eksplorasi</span>
+            </div>
+          </article>
+        </section>
+
+        <section class="zone-section">
+          <div class="section-title-row">
+            <div>
+              <span class="section-kicker">CHOOSE YOUR DESTINATION</span>
+              <h3>Peta Eksplorasi</h3>
+              <p>Lima zona, dua puluh misi, banyak hal untuk ditemukan.</p>
+            </div>
+            <span class="map-count"
+              ><i class="fa-solid fa-earth-asia"></i> 5 ZONES</span
+            >
+          </div>
+          <div class="zones-grid" id="zonesGrid"></div>
+        </section>
+
+        <section class="mission-section panel">
+          <div class="section-title-row">
+            <div>
+              <span class="section-kicker">YOUR FIELD JOURNAL</span>
+              <h3>Daftar Misi</h3>
+              <p>Pilih misi yang sudah terbuka untuk melihat tantangannya.</p>
+            </div>
+            <div class="mission-legend">
+              <span><i class="legend-dot done"></i> Selesai</span
+              ><span><i class="legend-dot current"></i> Terbuka</span
+              ><span><i class="legend-dot locked"></i> Terkunci</span>
+            </div>
+          </div>
+          <div class="missions-grid" id="missionsGrid"></div>
+        </section>
+        <section class="learning-note">
+          <span class="note-icon"><i class="fa-solid fa-lightbulb"></i></span>
+          <div>
+            <strong>Tips Penjelajah</strong>
+            <p>
+              Baca cerita dan petunjuk sebelum menjawab. Geografi bukan hanya
+              menghafal nama tempat, tetapi memahami hubungan antara lokasi,
+              manusia, dan lingkungan.
+            </p>
+          </div>
+        </section>
+      </section>
+
+      <section class="mission-view page-shell" id="missionView" hidden>
+        <div class="mission-topbar">
+          <button class="btn btn-soft btn-small" id="backToMap" type="button">
+            <i class="fa-solid fa-arrow-left"></i> Kembali ke Peta
+          </button>
+          <div class="mission-top-meta">
+            <span id="missionZoneLabel">MAP & SPATIAL SKILLS</span
+            ><span id="missionNumberLabel">MISSION 01 / 20</span>
+          </div>
+        </div>
+        <div class="mission-layout">
+          <section class="mission-story panel">
+            <div class="story-visual" id="storyVisual">
+              <i class="fa-solid fa-map"></i>
+            </div>
+            <span class="section-kicker" id="storyKicker"
+              >FIELD REPORT · 01</span
+            >
+            <h2 id="missionTitle">Membaca Peta</h2>
+            <p class="mission-intro" id="missionIntro"></p>
+            <div class="evidence-box">
+              <span
+                ><i class="fa-solid fa-binoculars"></i> CLUE / INFORMASI</span
+              >
+              <p id="missionClue"></p>
+            </div>
+            <div class="concept-box">
+              <span><i class="fa-solid fa-book-open"></i> KONSEP GEOGRAFI</span>
+              <p id="missionConcept"></p>
+            </div>
+            <div class="mission-reward">
+              <span><i class="fa-solid fa-award"></i> REWARD</span
+              ><strong>100 PTS <small>+ STREAK BONUS</small></strong>
+            </div>
+          </section>
+          <section class="mission-play panel">
+            <div class="play-heading">
+              <div>
+                <span class="section-kicker">INVESTIGATION CHALLENGE</span>
+                <h3>Uji Pemahamanmu</h3>
+              </div>
+              <span class="attempt-pill" id="attemptPill">ATTEMPT 1 / 3</span>
+            </div>
+            <div class="question-progress">
+              <div class="question-progress-top">
+                <span>MISSION COMPLETION</span
+                ><strong id="missionProgressText">0%</strong>
+              </div>
+              <div class="progress-track">
+                <span id="missionProgressBar"></span>
+              </div>
+            </div>
+            <h3 class="question-text" id="questionText"></h3>
+            <div class="answer-options" id="answerOptions"></div>
+            <div
+              class="feedback-box"
+              id="feedbackBox"
+              hidden
+              aria-live="polite"
+            >
+              <div class="feedback-heading">
+                <i class="fa-solid fa-circle-info"></i
+                ><strong id="feedbackTitle">Perhatikan kembali</strong>
+              </div>
+              <p id="feedbackText"></p>
+            </div>
+            <div class="play-actions">
+              <button
+                class="btn btn-primary"
+                id="checkAnswer"
+                type="button"
+                disabled
+              >
+                Periksa Jawaban <i class="fa-solid fa-check"></i></button
+              ><button
+                class="btn btn-soft"
+                id="nextMission"
+                type="button"
+                hidden
+              >
+                Lanjutkan <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+            <p class="play-tip">
+              <i class="fa-solid fa-compass"></i> Pilih satu jawaban terbaik
+              berdasarkan informasi pada laporan lapangan.
+            </p>
+          </section>
+        </div>
+      </section>
+
+      <section class="result-view page-shell" id="resultView" hidden>
+        <div class="result-card panel">
+          <div class="result-confetti" aria-hidden="true">✦　✧　✦</div>
+          <span class="section-kicker">FIELD REPORT COMPLETED</span>
+          <div class="result-icon">
+            <i class="fa-solid fa-flag-checkered"></i>
+          </div>
+          <h2 id="resultTitle">Misi berhasil!</h2>
+          <p id="resultDescription">Kamu telah menyelesaikan investigasi.</p>
+          <div class="result-stats">
+            <div>
+              <strong id="resultPoints">+100</strong><small>POIN DIDAPAT</small>
+            </div>
+            <div>
+              <strong id="resultAttempts">1</strong><small>PERCOBAAN</small>
+            </div>
+            <div>
+              <strong id="resultStars">★★★</strong><small>BINTANG</small>
+            </div>
+          </div>
+          <div class="result-actions">
+            <button class="btn btn-primary" id="resultContinue" type="button">
+              Kembali ke Peta <i class="fa-solid fa-map"></i></button
+            ><button class="btn btn-soft" id="resultReplay" type="button">
+              Ulangi Misi
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner page-shell">
+        <a class="footer-brand" href="#home"
+          ><span class="footer-mark"
+            ><i class="fa-solid fa-earth-asia"></i></span
+          ><span>GEOQUEST ACADEMY</span></a
+        >
+        <p>
+          Designed & Developed by <strong>Arjun Yuda Firwanda</strong> · ©
+          <span id="currentYear"></span> All rights reserved.
+        </p>
+        <span class="footer-tagline">EXPLORE · LEARN · DISCOVER</span>
+      </div>
+    </footer>
+
+    <div class="toast" id="toast" role="status" aria-live="polite">
+      <i class="fa-solid fa-circle-info"></i
+      ><span id="toastMessage">Informasi</span>
+    </div>
+
+    <div class="modal-backdrop" id="penaltyModal" hidden>
+      <section
+        class="dialog-card penalty-dialog"
+        role="alertdialog"
+        aria-modal="true"
+        aria-labelledby="penaltyTitle"
+      >
+        <div class="dialog-icon warning">
+          <i class="fa-solid fa-compass"></i>
+        </div>
+        <span class="section-kicker">EXPLORER CHECKPOINT</span>
+        <h2 id="penaltyTitle">Saatnya membaca ulang petunjuk!</h2>
+        <p>
+          Tiga percobaan belum tepat. Periksa kembali informasi dan konsep pada
+          laporan lapangan sebelum mencoba lagi.
+        </p>
+        <div class="penalty-stats">
+          <div>
+            <small>SKOR SEBELUMNYA</small><strong id="scoreBefore">0</strong>
+          </div>
+          <div>
+            <small>PENALTI</small><strong id="scorePenalty">−20</strong>
+          </div>
+          <div>
+            <small>SKOR SEKARANG</small><strong id="scoreAfter">0</strong>
+          </div>
+        </div>
+        <button class="btn btn-primary" id="closePenalty" type="button">
+          Saya Mengerti <i class="fa-solid fa-arrow-right"></i>
+        </button>
+      </section>
+    </div>
+
+    <script src="assets/js/missions.js"></script>
+    <script src="assets/js/app.js"></script>
+  </body>
+</html>
